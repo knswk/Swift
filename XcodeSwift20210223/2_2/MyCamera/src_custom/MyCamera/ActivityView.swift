@@ -1,0 +1,34 @@
+//
+//  ActivityView.swift
+//  MyCamera
+//
+//  Created by Swift-Beginners on 2020/08/21.
+//
+
+import SwiftUI
+
+struct ActivityView: UIViewControllerRepresentable {
+
+    // UIActivityViewController（シェア機能）でシェアする写真
+    let shareItems: [Any]
+
+    // Viewを生成するときに実行
+    func makeUIViewController(context: Context) ->
+        UIActivityViewController {
+        
+         // UIActivityViewControllerでシェアする機能を生成
+        let controller = UIActivityViewController(
+                        activityItems: shareItems,
+                        applicationActivities: nil)
+        
+        // UIActivityViewControllerを返す
+        return controller
+    }
+
+    // Viewが更新されたときに実行
+    func updateUIViewController(
+        _ uiViewController: UIActivityViewController,
+        context: UIViewControllerRepresentableContext<ActivityView>){
+        // 処理なし
+    }
+} // ActivityViewここまで
